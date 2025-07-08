@@ -20,7 +20,8 @@ Message Sender is a Go-based microservice that automatically processes and dispa
 
 - ✅ Automatic message dispatch  
 - ✅ Start/Stop control endpoints  
-- ✅ Query sent/unsent messages  
+- ✅ Query unsent messages
+- ✅ Automatic new message insertion to database per 45 seconds
 - 🚀 Pluggable sender strategies (Webhook, Twilio, etc.)  
 - 🗄️ Redis caching of `messageId` + timestamp  
 
