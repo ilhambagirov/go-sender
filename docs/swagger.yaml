@@ -1,0 +1,57 @@
+definitions:
+  message.Dto:
+    properties:
+      content:
+        type: string
+      createdDate:
+        type: string
+      id:
+        type: integer
+      isSent:
+        type: boolean
+      phone:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /message:
+    get:
+      description: Get message content, phone, sent-status.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/message.Dto'
+            type: array
+      summary: List messages
+      tags:
+      - messages
+  /start:
+    post:
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: already running
+          schema:
+            type: string
+      summary: Start sender
+      tags:
+      - control
+  /stop:
+    post:
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: not running
+          schema:
+            type: string
+      summary: Stop sender
+      tags:
+      - control
+swagger: "2.0"
