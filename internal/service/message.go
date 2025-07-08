@@ -128,7 +128,7 @@ func (s *messageService) process() error {
 	}
 }
 
-// insertNewMessage writes new messages every 2 seconds for newly added fresh records
+// insertNewMessage writes new messages every 45 seconds for newly added fresh records
 func (s *messageService) insertNewMessage() error {
 	ticker := time.NewTicker(45 * time.Second)
 	defer ticker.Stop()
